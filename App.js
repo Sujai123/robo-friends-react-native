@@ -16,12 +16,6 @@ export default function App() {
     'open-sans-bold': require("./assets/fonts/OpenSans-Bold.ttf")
   });
 
-  console.log(fontsLoaded)
-
-  if (!fontsLoaded) {
-    return <AppLoading />
-  }
-
   useEffect(() => {
     const fetchJsonPlaceholderList = async () => {
       try {
@@ -36,6 +30,12 @@ export default function App() {
 
     fetchJsonPlaceholderList();
   }, [])
+
+  console.log(fontsLoaded)
+
+  if (!fontsLoaded) {
+    return <AppLoading />
+  }
 
   const onChangeText = (value) => {
     setList(list => {
